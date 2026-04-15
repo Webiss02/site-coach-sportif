@@ -1,0 +1,190 @@
+/* Variables & Reset */
+:root {
+    --primary: #ff4d00;
+    --dark: #121212;
+    --light: #ffffff;
+    --grey: #1e1e1e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Nav */
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: rgba(18, 18, 18, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.logo span { color: var(--primary); }
+
+nav ul { display: flex; list-style: none; align-items: center; }
+
+nav ul li { margin-left: 20px; }
+
+nav a {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover { color: var(--primary); }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.hero h1 span { color: var(--primary); }
+
+.hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+
+/* Boutons */
+.btn-main {
+    background: var(--primary);
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-main:hover { transform: scale(1.05); }
+
+.btn-small {
+    background: var(--primary);
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+/* Sections */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 60px 0 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1-fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--grey);
+    padding: 30px;
+    border-radius: 10px;
+    border-bottom: 4px solid transparent;
+    transition: 0.3s;
+}
+
+.card:hover { border-color: var(--primary); }
+
+.card h3 { margin-bottom: 15px; color: var(--primary); }
+
+/* Témoignages */
+.testimonials {
+    background: #0a0a0a;
+    padding: 60px 0;
+    margin: 60px 0;
+}
+
+.testimonial-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.testimonial-box span {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--primary);
+    font-style: normal;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto 80px;
+}
+
+input, textarea {
+    background: var(--grey);
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #222;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    nav ul { display: none; } /* On pourrait ajouter un menu burger ici */
+}
